@@ -26,3 +26,24 @@ python 1_crawler/crawler.py --urls 1_crawler/urls.txt --out 1_crawler/dump --nee
 - --workers - количество потоков для выгрузки
 - --delay - ожидание перед очередным запросом на хост
 - --timeout - таймаут ожидания ответа от сервера
+
+
+## Задание 2
+
+Код находится в папке 2_tonkenize. Итог токенизации и лемматизации в папке 2_tonkenize/artefacts/dump
+
+### Запуск
+
+1. Установить зависимости
+```shell
+pip install -r requirements.txt
+```
+
+2. Запуск загрузчика страниц
+```shell
+python 2_tonkenize/html_processor.py --input 1_crawler/artefacts/dump/pages/ --output 2_tonkenize/processed/
+```
+Параметры:
+
+- --input - путь к директории с html файлами
+- --output- путь к директории куда будут сохранены результаты
