@@ -47,3 +47,33 @@ python 2_tonkenize/html_processor.py --input 1_crawler/artefacts/dump/pages/ --o
 
 - --input - путь к директории с html файлами
 - --output- путь к директории куда будут сохранены результаты
+
+## Задание 3
+
+Код находится в папке 3_indexation. Итог индексации в папке 3_indexation/artefacts/dump
+
+### Запуск
+
+1. Установить зависимости
+```shell
+pip install -r requirements.txt
+```
+
+2. Запуск индексации
+```shell
+python 3_indexation/inverted_index.py --input 2_tonkenize/artefacts/dump/processed/lemmas --output 3_indexation/artefacts/dump/inverted_index.txt
+```
+Параметры:
+
+- --input - путь к директории с леммами
+- --output - путь к директории куда будут сохранены результаты
+
+3. Запуск булева поиска
+```shell
+python 3_indexation/boolean_search.py --index-path 3_indexation/artefacts/dump/inverted_index.txt --lemmas-path 2_tonkenize/artefacts/dump/processed/lemmas --htmls-path 1_crawler/artefacts/dump/pages
+```
+Параметры:
+
+- --index-path - путь к файлы инвертированного индекса
+- --lemmas-path - путь к директории с леммами
+- --htmls-path - путь к директории с html файлами
