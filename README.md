@@ -77,3 +77,23 @@ python 3_indexation/boolean_search.py --index-path 3_indexation/artefacts/dump/i
 - --index-path - путь к файлы инвертированного индекса
 - --lemmas-path - путь к директории с леммами
 - --htmls-path - путь к директории с html файлами
+
+## Задание 4
+
+Код находится в папке 4_tf_idf. Итог вычислений в папке 4_tf_idf/artefacts/dump
+
+1. Установить зависимости
+```shell
+pip install -r requirements.txt
+```
+
+2. Запуск
+```shell
+python 4_tf_idf/frequency_evaluator.py --htmls-path 1_crawler/artefacts/dump/pages/ --lemmas-path 2_tonkenize/artefacts/dump/processed/lemmas/ --tokens-path 2_tonkenize/artefacts/dump/processed/tokens/ --output 4_tf_idf/processed/
+```
+Параметры:
+
+- --lemmas-path - путь к директории с леммами
+- --htmls-path - путь к директории с html файлами
+- --tokens-path - путь к директории с токенами
+- --output - путь к директории куда будут сохранены результаты
