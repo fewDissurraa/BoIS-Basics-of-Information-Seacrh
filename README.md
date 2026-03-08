@@ -97,3 +97,22 @@ python 4_tf_idf/frequency_evaluator.py --htmls-path 1_crawler/artefacts/dump/pag
 - --htmls-path - путь к директории с html файлами
 - --tokens-path - путь к директории с токенами
 - --output - путь к директории куда будут сохранены результаты
+
+## Задание 5
+
+Код находится в папке 5_search
+
+1. Установить зависимости
+```shell
+pip install -r requirements.txt
+```
+
+2. Запуск
+```shell
+python 5_search/search.py --html-index-path 1_crawler/artefacts/dump/index.txt --lemmas-tfidf-path 4_tf_idf/artefacts/dump/lemmas --index-path 3_indexation/artefacts/dump/inverted_index.txt
+```
+Параметры:
+
+- --html-index-path - путь к файлу с индексом html файлов
+- --lemmas-tfidf-path - путь к директории с вычисленными tf и tfidf для лемм 
+- --index-path - путь к файлу с инвертированным индексом
