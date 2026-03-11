@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Результаты поиска{% endblock %}
+
+{% block content %}
+<div class="search-container">
+    <form method="POST" action="/" class="search-form">
+        <div class="search-input-group">
+            <input 
+                type="text" 
+                name="query" 
+                placeholder="Введите поисковый запрос..." 
+                class="search-input"
+                value="{{ query }}"
+            >
+            <button type="submit" class="search-button">Найти</button>
+        </div>
+    </form>
+</div>
+
+<div class="results-info">
+    <p class="query-info">Результаты поиска по запросу: <strong>"{{ query }}"</strong></p>
+    <p class="results-count">Найдено документов: {{ total_results }}</p>
+</div>
+
+{% if results %}
+<div class="results-list">
+    {% for url, similarity in results %}
+    <div class="result-item">
+        <div class="result-rank">{{ loop.index }}</div>
+        <div class="result-content">
+            <a href="{{ url }}" target="_blank" class="result-url">{{ url }}</a>
+            <div class="result-similarity">Схожесть: {{ similarity | round(4) }}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="no-results">
+    <p>По вашему запросу ничего не найдено.</p>
+    <p>Попробуйте изменить поисковый запрос.</p>
+</div>
+{% endif %}
+{% endblock %}

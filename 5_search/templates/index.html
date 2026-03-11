@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Поиск{% endblock %}
+
+{% block content %}
+<div class="search-container">
+    <form method="POST" action="/" class="search-form">
+        <div class="search-input-group">
+            <input 
+                type="text" 
+                name="query" 
+                placeholder="Введите поисковый запрос..." 
+                class="search-input"
+                autofocus
+            >
+            <button type="submit" class="search-button">Найти</button>
+        </div>
+    </form>
+    
+    {% if error %}
+    <div class="error-message">
+        {{ error }}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
