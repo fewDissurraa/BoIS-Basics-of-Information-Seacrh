@@ -116,3 +116,10 @@ python 5_search/search.py --html-index-path 1_crawler/artefacts/dump/index.txt -
 - --html-index-path - путь к файлу с индексом html файлов
 - --lemmas-tfidf-path - путь к директории с вычисленными tf и tfidf для лемм 
 - --index-path - путь к файлу с инвертированным индексом
+
+3. Запуск веб интерфейса
+```shell
+python 5_search/app.py
+```
+
+вею интерфейс будет по адресу http://127.0.0.1:5000
